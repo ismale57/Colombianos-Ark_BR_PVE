@@ -1,1 +1,1 @@
-esta es ina pago a web de ark 
+esta es una app web 
