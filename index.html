@@ -1,0 +1,654 @@
+<!DOCTYPE html> 
+<html lang="EN">
+<head>
+ <meta charset="UTF-8">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: #00ff00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-container {
+  background: lightgreen;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.25);
+  width: 95%;
+  max-width: 700px;
+}
+
+h2 {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+label {
+  font-size: 26px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 25px;
+  font-size: 24px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+input[type="checkbox"] {
+  transform: scale(2);
+  margin-right: 12px;
+}
+
+#remember-label {
+  font-size: 22px;
+  display: inline-block;
+}
+
+#forgot-link {
+  float: right;
+  font-size: 20px;
+  color: #1976d2;
+  text-decoration: none;
+}
+
+#forgot-link:hover {
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  padding: 25px;
+  font-size: 28px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+p {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 22px;
+}
+
+p a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+<!--pantalla de registro->
+
+/* Oculta todo al inicio */
+#login-container {
+  display: none;
+}
+
+#register-container {
+  display: none;
+  background: #ffffff;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.25);
+  width: 95%;
+  max-width: 700px;
+  margin: auto;
+}
+
+#register-container h2 {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#register-form label {
+  font-size: 26px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+#register-form input[type="email"],
+#register-form input[type="password"] {
+  width: 100%;
+  padding: 25px;
+  font-size: 24px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#register-form button {
+  width: 100%;
+  padding: 25px;
+  font-size: 28px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#register-container p {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 22px;
+}
+
+#register-container p a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#register-container p a:hover {
+  text-decoration: underline;
+}
+
+#pantalla-principal {
+  display: none;
+}
+
+
+body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #00ff00;
+      font-size: 120%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #pantalla-principal {
+      padding: 20px;
+    }
+
+    .fondo {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #000;
+      margin-bottom: 30px;
+    }
+
+    .contenedor {
+      width: 90%;
+      max-width: 700px;
+      margin: 0 auto;
+      background: #006400;
+      border: 5px solid black;
+      border-radius: 15px;
+      padding: 30px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .link-1, .link-2 {
+      display: inline-block;
+      font-size: 1.5em;
+      background-color: #ffffff;
+      color: #006400;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      margin: 10px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .link-1:hover, .link-2:hover {
+      background-color: #006400;
+      color: white;
+    }
+
+    .contenedor-2 {
+      width: 100%;
+      max-width: 1200px;
+      background: #006400;
+      border: 5px solid black;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px auto;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .btn-1, .btn-2, .btn-volver, .btn-ingresar {
+      padding: 20px 40px;
+      font-size: 1.3em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: white;
+      color: #006400;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .btn-1:hover, .btn-2:hover, .btn-volver:hover, .btn-ingresar:hover {
+      background-color: #006400;
+      color: white;
+    }
+
+    #pantalla-admin, #pantalla-obtener-admin {
+      display: none;
+      background-color: #fff;
+      padding: 40px;
+      max-width: 900px;
+      margin: 40px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      text-align: left;
+    }
+
+    #pantalla-admin input {
+      width: 100%;
+      padding: 15px;
+      font-size: 1em;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    #mensaje-error {
+      color: red;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    #pantalla-obtener-admin h2 {
+      color: #006400;
+      font-size: 1.8em;
+    }
+
+    #pantalla-obtener-admin p {
+      font-size: 1.1em;
+      margin: 20px 0;
+    }
+
+    #pantalla-obtener-admin a {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #006400;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    #pantalla-obtener-admin a:hover {
+      background: #004d00;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 2px solid #006400;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .admin {
+      color: green;
+      font-weight: bold;
+    }
+
+    .contenedor-3 {
+      max-width: 700px;
+      margin: 40px auto 0 auto;
+      background: #e0ffe0;
+      border: 3px solid #006400;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: left;
+      color: #004d00;
+      font-size: 1.2em;
+    }
+
+    .contenedor-3 h2 {
+      color: #006400;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    .contenedor-3 ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .contenedor-3 ul li {
+      margin-bottom: 8px;
+    }
+
+
+
+
+</style>
+</head> 
+<body>
+
+
+<div id="login-container">
+  <h1>LOG IN</h1>
+
+  <form id="login-form">
+
+  <labe for="email">Correo:</label><br>
+  <input type="email" id="email" required><br><br>
+
+  <label for="password">Contraseña</label><br>
+  <input type="password" id="password" required><br><br>
+  <input type="checkbox" id="remember">
+  <label for="remeber">Remember me</label><br><br>
+
+  <a href="#" id="forget-link">¿Olvidaste tu contraseña?</a><br><br>
+
+  <button type="submit">Log In</button>
+  </form>
+  <p>¿Don't have an account?<a href="#">Register</a></p>
+</div>
+
+
+
+<div id="register-container" style="display: none;">
+  <h2>Register</h2>
+
+  <form id="register-form">
+    <label for="new-email">Correo:</label>
+    <input type="email" id="new-email" required>
+
+    <label for="new-password">Contraseña:</label>
+    <input type="password" id="new-password" required>
+
+    <label for="confirm-password">Confirmar Contraseña:</label>
+    <input type="password" id="confirm-password" required>
+
+    <button type="submit">Registrarme</button>
+  </form>
+
+  <p>Already have an account? <a href="#" id="back-to-login">Go back to Login</a></p>
+</div>
+
+<!-- Pantalla principal -->
+<div id="pantalla-principal">
+  <img src="https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_800/ncom/en_US/games/switch/a/ark-survival-evolved-switch/hero.jpg" class="fondo" alt="Ark Survival" />
+  <h1>Colombianos Ark_BR_PVE</h1>
+
+  <div class="contenedor">
+    <a href="https://chat.whatsapp.com/DINKGqKb8KE3WlWPcfAyp8" class="link-1" target="_blank">WhatsApp</a>
+    <a href="https://discord.gg/6EbCZbU8" class="link-2" target="_blank">Discord</a>
+  </div>
+
+  <div class="contenedor-2">
+    <button class="btn-1" onclick="mostrarPantalla('pantalla-admin')">ADMIN</button>
+    <button class="btn-2" onclick="mostrarPantalla('pantalla-obtener-admin')">Obtener Adm</button>
+  </div>
+
+  <div class="contenedor-3">
+    <h2>Bienvenido a la comunidad Colombianos Ark_BR_PVE</h2>
+    <p>Este es un espacio donde jugadores de Ark: Survival Evolved pueden conectarse, colaborar y crecer juntos.</p>
+    <p>Aquí puedes:</p>
+    <ul>
+      <li>Unirte a nuestro grupo de WhatsApp o servidor de Discord.</li>
+      <li>Contactar administradores para soporte o ayuda.</li>
+      <li>Postularte como admin temporal con nuestra garantía de 5 horas.</li>
+      <li>Ver futuras noticias, reglas del servidor y avisos importantes.</li>
+    </ul>
+    <p>¡Disfruta tu estadía, explora el servidor y evoluciona junto a tu tribu!</p>
+  </div>
+</div>
+
+<!-- Pantalla 2 - Admin -->
+<div id="pantalla-admin">
+  <h2>Acceso Admin</h2>
+  <p>Ingrese la contraseña de administrador para continuar:</p>
+  <input type="password" id="clave-admin" placeholder="Contraseña de acceso" />
+  <div id="mensaje-error"></div>
+  <button class="btn-ingresar" onclick="verificarAdmin()">Ingresar</button>
+  <button class="btn-volver" onclick="volver()">Volver</button>
+
+  <!-- Panel con la tabla de usuarios -->
+  <div id="panel-admin" style="display:none; margin-top: 30px;">
+    <h3>Usuarios registrados</h3>
+    <table id="tabla-usuarios">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Rol</th>
+          <th>Hora de inicio</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Pantalla 3 - Obtener Admin -->
+<div id="pantalla-obtener-admin">
+  <h2>¿Quieres ser Admin?</h2>
+  <p>Para obtener acceso como administrador debes hacer una pago vía PayPal. Este acceso incluye 5 horas de garantía en caso de fallos.</p>
+  <a href="https://www.paypal.me/WMSHR" target="_blank">Pagar con PayPal</a>
+  <p>Después del pago, recibirás acceso por mes como administrador. ¡Gracias por tu apoyo!</p>
+  <button class="btn-volver" onclick="volver()">Volver</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+//MOSTRA DORMULARIO DE REGISTRO AL CLICK
+
+document.querySelector('#login-container p a').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.getElementById('login-container').style.display = 'none';
+  document.getElementById('register-container').style.display = 'block';
+});
+
+
+
+//FUNCION PARA EL FORMULARIO DE REGISTERS 
+
+document.getElementById('register-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const newEmail = document.getElementById('new-email').value;
+  const newPassword = document.getElementById('new-password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+
+  if (newPassword !== confirmPassword) {
+    alert('Las contraseñas no coinciden.');
+    return;
+  }
+
+  // Obtener lista de usuarios del localStorage (o crear una vacía si no hay)
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+
+  // Verificar si el email ya está registrado
+  const exists = users.some(user => user.email === newEmail);
+  if (exists) {
+    alert('Este correo ya está registrado.');
+    return;
+  }
+
+  // Agregar nuevo usuario
+  users.push({ email: newEmail, password: newPassword });
+
+  // Guardar lista actualizada en localStorage
+  localStorage.setItem('users', JSON.stringify(users));
+
+  alert('¡Registro exitoso!');
+
+  // Ir a la pantalla principal
+  document.getElementById('register-container').style.display = 'none';
+  document.getElementById('pantalla-principal').style.display = 'block';
+});
+
+
+//BOTON DE IR ATRÁS
+
+document.getElementById('back-to-login').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.getElementById('register-container').style.display = 'none';
+  document.getElementById('login-container').style.display = 'block';
+});
+
+
+
+//FUNCION DE LOGIN BOTONT Y VALIDATION 
+
+document.getElementById('login-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Obtener la lista de usuarios desde localStorage
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+
+  // Buscar un usuario con ese email y password
+  const user = users.find(user => user.email === email && user.password === password);
+
+  if (user) {
+    alert('¡Inicio de sesión exitoso!');
+    document.getElementById('login-container').style.display = 'none';
+    document.getElementById('pantalla-principal').style.display = 'block';
+  } else {
+    alert('Correo o contraseña incorrectos.');
+  }
+});
+
+
+function mostrarPantalla(id) {
+  document.getElementById('pantalla-principal').style.display = 'none';
+  document.getElementById('pantalla-admin').style.display = 'none';
+  document.getElementById('pantalla-obtener-admin').style.display = 'none';
+  document.getElementById(id).style.display = 'block';
+
+  // Si muestra pantalla admin, resetea inputs y estado
+  if(id === 'pantalla-admin'){
+    document.getElementById('clave-admin').value = '';
+    document.getElementById('mensaje-error').textContent = '';
+    document.getElementById('panel-admin').style.display = 'none';
+  }
+}
+
+function volver() {
+  document.getElementById('pantalla-principal').style.display = 'block';
+  document.getElementById('pantalla-admin').style.display = 'none';
+  document.getElementById('pantalla-obtener-admin').style.display = 'none';
+}
+
+// Verifica la contraseña y muestra el panel admin con tabla
+function verificarAdmin() {
+  const clave = document.getElementById('clave-admin').value.trim();
+  const errorDiv = document.getElementById('mensaje-error');
+  if (clave === "Cosita00$") {
+    errorDiv.textContent = '';
+    agregarAdminLocal();
+    mostrarPanelAdmin();
+  } else {
+    errorDiv.textContent = 'Contraseña incorrecta';
+  }
+}
+
+// Guarda admin en localStorage si no está ya registrado
+function agregarAdminLocal() {
+  const ahora = new Date();
+  const hora = ahora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+  // Chequear si admin ya existe para no duplicar
+  const existeAdmin = usuarios.some(u => u.rol === 'admin' && u.nombre === 'Tú (Admin)');
+  if (!existeAdmin) {
+    usuarios.push({
+      id: generarID(usuarios.length),
+      nombre: 'Tú (Admin)',
+      rol: 'admin',
+      hora: hora
+    });
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+  }
+}
+
+// Muestra el panel admin con la tabla actualizada
+function mostrarPanelAdmin() {
+  document.getElementById('panel-admin').style.display = 'block';
+  renderizarUsuarios();
+}
+
+// Pinta la tabla de usuarios/admins desde localStorage
+function renderizarUsuarios() {
+  const tbody = document.querySelector('#tabla-usuarios tbody');
+  tbody.innerHTML = '';
+
+  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+  usuarios.forEach(user => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>#${user.id}</td>
+      <td>${user.nombre}</td>
+      <td class="${user.rol === 'admin' ? 'admin' : ''}">${user.rol === 'admin' ? '✔ Admin' : 'Normal'}</td>
+      <td>${user.hora}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function generarID(num) {
+  return (num + 1).toString().padStart(3, '0');
+}
+
+
+</script>
+
+</body>
+</html>
